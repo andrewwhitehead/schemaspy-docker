@@ -8,7 +8,7 @@ HTML content, the results are served by busybox httpd.
 
 SchemaSpy is available at: https://github.com/schemaspy/schemaspy
 
-This repository loosely based on: https://github.com/bcgov/schemaspy
+See also: https://github.com/bcgov/schemaspy
 
 ## Sample Docker build command
 
