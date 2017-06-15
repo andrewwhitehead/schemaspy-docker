@@ -13,8 +13,7 @@ See also: https://github.com/bcgov/schemaspy
 ## Sample Docker build command
 
 ```
-cd schemaspy-docker
-docker build -t schemaspy .
+docker build -t schemaspy https://github.com/cywolf/schemaspy-docker.git
 ```
 
 ## Sample MySQL Usage
