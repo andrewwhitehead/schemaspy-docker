@@ -66,8 +66,12 @@ fi
 
 echo $ARGS
 
-java -jar "$SCHEMASPY_PATH" $ARGS -o "$OUTPUT_PATH" \
-	|| exit 1
+java -jar "$SCHEMASPY_PATH" $ARGS -o "$OUTPUT_PATH"
+
+if [ ! -f "$OUTPUT_PATH/index.html" ]; then
+	echo "ERROR - No HTML output generated"
+	exit 1
+fi
 
 # busybox httpd
 echo "Starting webserver on port $SERVER_PORT"
