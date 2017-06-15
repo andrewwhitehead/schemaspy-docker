@@ -3,8 +3,8 @@
 Quickly run SchemaSpy on a MySQL, Postgres or SQLite3 database in order
 to generate a browsable visualization of the tables, columns, and relationships.
 
-Based on `frolvlad/alpine-oraclejdk8:slim`. HTML content produced by SchemaSpy
-is served by busybox httpd.
+Based on `frolvlad/alpine-oraclejdk8:slim`. After running SchemaSpy to produce the
+HTML content, the results are served by busybox httpd.
 
 SchemaSpy is available at: https://github.com/schemaspy/schemaspy
 
