@@ -48,7 +48,7 @@ docker run -ti --rm --name schemaspy \
 	-p 8080:8080 \
 	-v "$PWD/data":/app/data \
 	-e DATABASE_TYPE=sqlite \
-	-e DATABASE_NAME=/app/data/db.sqlite3 \
+	-e DATABASE_NAME=/app/data/mydatabase.sqlite3 \
 	schemaspy
 ```
 
