@@ -38,10 +38,6 @@ if [ "$DB_TYPE" != "sqlite" ]; then
 		echo "ERROR - Environment variable DATABASE_USER is empty."
 		FAIL=1
 	fi
-	if [ -z "$DB_PASSWORD" ]; then
-		echo "ERROR - Environment variable DATABASE_PASSWORD is empty."
-		FAIL=1
-	fi
 fi
 
 if [ -z "$DB_NAME" ]; then
