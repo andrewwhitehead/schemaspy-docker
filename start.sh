@@ -69,6 +69,5 @@ if [ ! -f "$OUTPUT_PATH/index.html" ]; then
 	exit 1
 fi
 
-# busybox httpd
 echo "Starting webserver on port $SERVER_PORT"
-php5 -S localhost:$SERVER_PORT -t $OUTPUT_PATH
+php5 -S 0.0.0.0:$SERVER_PORT -t $OUTPUT_PATH
