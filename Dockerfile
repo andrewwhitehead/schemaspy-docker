@@ -13,4 +13,7 @@ RUN adduser -u 1000 -DG root default && \
     mkdir output && \
     chmod -R g+rwX .
 USER default
+
+EXPOSE 8080
+
 CMD [ "sh", "start.sh" ]
