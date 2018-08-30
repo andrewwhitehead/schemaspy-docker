@@ -10,22 +10,14 @@ SchemaSpy is available at: https://github.com/schemaspy/schemaspy
 
 See also: https://github.com/bcgov/schemaspy
 
+This repo is a clone from: https://github.com/cywolf/schemaspy-docker/
+
+With a fix in master for httpd failing to start: https://github.com/cywolf/schemaspy-docker/pull/3
+
 ## Sample Docker build command
 
 ```
-docker build -t schemaspy https://github.com/cywolf/schemaspy-docker.git
-```
-
-## Sample MySQL Usage
-
-```
-docker run -ti --rm --name schemaspy \
-	-p 8080:8080 \
-	-e DATABASE_TYPE=mysql \
-	-e DATABASE_HOST=mysql -e DATABASE_NAME=mydatabase \
-	-e DATABASE_USER=root -e DATABASE_PASSWORD=mysecretpassword \
-	--link mysql \
-	schemaspy
+docker build -t quiqupltd/schemaspy https://github.com/quiqupltd/schemaspy-docker.git
 ```
 
 ## Sample Postgres Usage
@@ -34,21 +26,11 @@ docker run -ti --rm --name schemaspy \
 docker run -ti --rm --name schemaspy \
 	-p 8080:8080 \
 	-e DATABASE_TYPE=pgsql \
-	-e DATABASE_HOST=postgres -e DATABASE_NAME=mydatabase \
-	-e DATABASE_USER=postgres -e DATABASE_PASSWORD=mysecretpassword \
+	-e DATABASE_HOST=postgres \
+	-e DATABASE_NAME=mydatabase \
+	-e DATABASE_USER=postgres \
+	-e DATABASE_PASSWORD=mysecretpassword \
 	--link postgres \
-	schemaspy
-```
-
-## Sample SQLite3 Usage
-
-```
-mkdir data && cp mydatabase.sqlite3 data/
-docker run -ti --rm --name schemaspy \
-	-p 8080:8080 \
-	-v "$PWD/data":/app/data \
-	-e DATABASE_TYPE=sqlite \
-	-e DATABASE_NAME=/app/data/mydatabase.sqlite3 \
 	schemaspy
 ```
 
@@ -65,3 +47,11 @@ docker run -ti --rm --name schemaspy \
 
 `DATABASE_USER`, `DATABASE_PASSWORD`: The username and password used to establish
 	the database connection.
+
+
+## Building
+
+We can build this image locally and push to db-graph repo which uses it in deployments :
+
+* `docker build --tag registry.quiqup.com/backend/db-graph:schemaspy .`
+* `docker push registry.quiqup.com/backend/db-graph:schemaspy`
