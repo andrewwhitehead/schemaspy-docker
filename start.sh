@@ -18,8 +18,9 @@ if [ -z "$DB_TYPE" ]; then
 elif [ -z "$DB_DRIVER" ]; then
 	if [ "$DB_TYPE" == "mysql" ]; then
 		DB_DRIVER="lib/mysql-connector-java.jar"
-	elif [ "$DB_TYPE" == "pgsql" ]; then
+	elif [ "$DB_TYPE" == "pgsql" ] || [ "$DB_TYPE" == "postgres" ] || [ "$DB_TYPE" == "postgresql" ]; then
 		DB_DRIVER="/usr/share/java/postgresql-jdbc.jar"
+		DB_TYPE=pgsql
 	elif [ "$DB_TYPE" == "sqlite" ]; then
 		DB_DRIVER="lib/sqlite-jdbc.jar"
 		CONNPROPS=${CONNPROPS-"sqlite.properties"}
