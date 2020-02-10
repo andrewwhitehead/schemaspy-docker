@@ -4,7 +4,7 @@ WORKDIR /app/
 
 ENV SCHEMA_SPY_VERSION=6.1.0
 ENV MYSQL_VERSION=6.0.6
-ENV SQL_LITE_VERSION=3.1.14
+ENV SQL_LITE_VERSION=3.30.1
 
 RUN apk --no-cache add \
     	busybox-extras \
@@ -15,7 +15,7 @@ RUN apk --no-cache add \
     wget -O lib/mysql-connector-java.jar \
     	https://repo1.maven.org/maven2/mysql/mysql-connector-java/${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}.jar && \
     wget -O lib/sqlite-jdbc.jar \
-    	https://repo1.maven.org/maven2/mysql/mysql-connector-java/org/xerial/sqlite-jdbc/${SQL_LITE_VERSION}/sqlite-jdbc-${SQL_LITE_VERSION}.jar
+    	https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/sqlite-jdbc-${SQL_LITE_VERSION}.jar
 
 RUN adduser -u 1000 -DG root default && \
     mkdir output && \
