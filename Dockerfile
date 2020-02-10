@@ -4,7 +4,7 @@ WORKDIR /app/
 
 ENV SCHEMA_SPY_VERSION=6.1.0
 ENV MYSQL_VERSION=6.0.6
-ENV SQL_LITE_VERSION=3.18.0
+ENV SQL_LITE_VERSION=3.1.14
 
 RUN apk --no-cache add \
     	busybox-extras \
